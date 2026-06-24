@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.*;
  * is intentionally thin – it handles only HTTP concerns.
  */
 @RestController
-@RequestMapping("/bfhl")
+
 @CrossOrigin(origins = "*")   // allows calls from any origin (handy for testing)
 public class BfhlController {
 
@@ -25,7 +25,7 @@ public class BfhlController {
     }
 
 
-    @PostMapping
+    @PostMapping("/bfhl")
     public ResponseEntity<BfhlResponse> process(@Valid @RequestBody BfhlRequest request) {
         BfhlResponse response = bfhlService.process(request);
         return ResponseEntity.ok(response);
