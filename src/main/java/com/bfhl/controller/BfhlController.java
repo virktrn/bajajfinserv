@@ -24,16 +24,16 @@ public class BfhlController {
         this.bfhlService = bfhlService;
     }
 
-    /**
-     * POST /bfhl
-     * Processes a mixed-type data array and returns categorised results.
-     *
-     * @param request validated request body
-     * @return 200 OK with {@link BfhlResponse}
-     */
+
     @PostMapping
     public ResponseEntity<BfhlResponse> process(@Valid @RequestBody BfhlRequest request) {
         BfhlResponse response = bfhlService.process(request);
         return ResponseEntity.ok(response);
     }
+
+    @GetMapping("/health")
+    public ResponseEntity<String> healthCheck() {
+        return ResponseEntity.ok("OK");
+    }
+
 }
