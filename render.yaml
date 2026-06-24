@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: bfhl-api
+    env: docker
+    plan: free
+    healthCheckPath: /bfhl
+    envVars:
+      - key: APP_USER_FULL_NAME
+        value: john_doe          # ← change to your name (lowercase, underscores)
+      - key: APP_USER_DOB
+        value: 17091999          # ← change to your DOB ddmmyyyy
+      - key: APP_USER_EMAIL
+        value: john@xyz.com      # ← change to your email
+      - key: APP_USER_ROLL_NUMBER
+        value: ABCD123           # ← change to your roll number
